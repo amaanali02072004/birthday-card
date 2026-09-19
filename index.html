@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#4b0f20" />
+  <title>For You ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="petals" aria-hidden="true"></div>
+
+  <main class="card-shell">
+    <section class="hero card-panel" id="top">
+      <div class="hero-glow"></div>
+      <div class="lily lily-left" aria-hidden="true">✿</div>
+      <div class="lily lily-right" aria-hidden="true">✿</div>
+      <p class="eyebrow">A little birthday card, made just for you</p>
+      <h1>Happy <span>21st</span><br>Birthday ♡</h1>
+      <p class="intro">Twenty-one looks beautiful on you.</p>
+      <button class="open-btn" id="openCard">Open your card <span>↓</span></button>
+    </section>
+
+    <section class="message card-panel reveal" id="message">
+      <div class="floral-line"><span>❧</span><span>✿</span><span>❧</span></div>
+      <p class="eyebrow">A note for you</p>
+      <h2>Here’s to another<br><em>beautiful chapter.</em></h2>
+      <p class="body-copy">May 21 bring you the kind of happiness that stays, people who make you laugh until your cheeks hurt, little moments worth remembering, and big dreams that somehow become real.</p>
+      <p class="body-copy">Keep being wonderfully, unapologetically you. You deserve a birthday as lovely as you are.</p>
+      <div class="signature">With lots of love <span>♡</span></div>
+    </section>
+
+    <section class="cake card-panel reveal" id="cakeSection">
+      <div class="section-kicker">Your tiny birthday ritual</div>
+      <h2>Make a wish.<br><em>Then blow.</em></h2>
+      <p class="hint" id="hint">Tap the button, allow microphone access, and blow toward your phone.</p>
+
+      <div class="cake-stage" id="cakeStage">
+        <div class="sparkles" aria-hidden="true">✦　·　✧　·　✦</div>
+        <svg class="cake-svg" viewBox="0 0 420 340" role="img" aria-label="Birthday cake with three lit candles">
+          <defs>
+            <linearGradient id="cakeTop" x1="0" x2="1"><stop offset="0" stop-color="#f7d6d7"/><stop offset="1" stop-color="#d99ca7"/></linearGradient>
+            <linearGradient id="cakeBody" x1="0" x2="1"><stop offset="0" stop-color="#7b1e35"/><stop offset="1" stop-color="#4b0f20"/></linearGradient>
+            <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-opacity=".25"/></filter>
+          </defs>
+          <ellipse cx="210" cy="300" rx="145" ry="20" fill="#2a0711" opacity=".3"/>
+          <g filter="url(#shadow)">
+            <rect x="95" y="190" width="230" height="95" rx="18" fill="url(#cakeBody)"/>
+            <ellipse cx="210" cy="190" rx="115" ry="34" fill="url(#cakeTop)"/>
+            <path d="M95 215 Q125 238 155 215 T215 215 T275 215 T325 215 V240 Q295 263 265 240 T205 240 T145 240 T95 240Z" fill="#f4c5cc" opacity=".92"/>
+            <circle cx="135" cy="260" r="6" fill="#f6d4d8"/><circle cx="180" cy="273" r="5" fill="#e8a9b4"/><circle cx="240" cy="255" r="5" fill="#f6d4d8"/><circle cx="285" cy="273" r="6" fill="#e8a9b4"/>
+          </g>
+          <g class="candles">
+            <g class="candle" data-candle="1"><rect x="150" y="115" width="16" height="65" rx="5" fill="#f3d5a2"/><path d="M158 115 C153 107 163 102 158 93" stroke="#f8d16a" stroke-width="4" fill="none" class="flame"/><ellipse cx="158" cy="92" rx="7" ry="12" fill="#ffbe43" class="flame-glow"/></g>
+            <g class="candle" data-candle="2"><rect x="202" y="100" width="16" height="80" rx="5" fill="#f3d5a2"/><path d="M210 100 C205 92 215 87 210 78" stroke="#f8d16a" stroke-width="4" fill="none" class="flame"/><ellipse cx="210" cy="77" rx="7" ry="12" fill="#ffbe43" class="flame-glow"/></g>
+            <g class="candle" data-candle="3"><rect x="254" y="115" width="16" height="65" rx="5" fill="#f3d5a2"/><path d="M262 115 C257 107 267 102 262 93" stroke="#f8d16a" stroke-width="4" fill="none" class="flame"/><ellipse cx="262" cy="92" rx="7" ry="12" fill="#ffbe43" class="flame-glow"/></g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="meter-wrap" id="meterWrap" hidden>
+        <div class="meter-label"><span>Blow strength</span><span id="meterValue">0%</span></div>
+        <div class="meter"><div id="meterBar"></div></div>
+      </div>
+      <button class="mic-btn" id="micBtn">🎙️ Start microphone</button>
+      <button class="skip-btn" id="skipBtn">Having trouble? Lightly tap here to blow them out</button>
+      <p class="privacy">Microphone audio is processed in your browser and is not uploaded.</p>
+    </section>
+
+    <section class="gallery card-panel reveal" id="gallery">
+      <div class="section-kicker">Little memories</div>
+      <h2>Some space for<br><em>your favourite photos.</em></h2>
+      <div class="photo-grid">
+        <div class="photo photo-main"><img src="assets/photo-1.jpg" alt="Birthday memory" onerror="this.parentElement.classList.add('empty'); this.style.display='none'"><span>your photo</span></div>
+        <div class="photo"><img src="assets/photo-2.jpg" alt="Birthday memory" onerror="this.parentElement.classList.add('empty'); this.style.display='none'"><span>your photo</span></div>
+        <div class="photo"><img src="assets/photo-3.jpg" alt="Birthday memory" onerror="this.parentElement.classList.add('empty'); this.style.display='none'"><span>your photo</span></div>
+      </div>
+      <p class="gallery-note">Drop your provided images into <code>assets/</code> and name them <b>photo-1.jpg</b>, <b>photo-2.jpg</b>, and <b>photo-3.jpg</b>.</p>
+    </section>
+
+    <section class="final card-panel reveal">
+      <div class="lily-bloom" aria-hidden="true">✿</div>
+      <p class="eyebrow">One last thing</p>
+      <h2>Happy birthday,<br><em>you lovely human.</em></h2>
+      <p class="body-copy">May this year be soft where it needs to be, exciting where you want it to be, and full of reasons to smile.</p>
+      <div class="big-heart">♡</div>
+      <button class="again-btn" id="againBtn">Read it again ↑</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
